@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { Link } from 'expo-router';
 
 export default function App() {
   return (
@@ -9,7 +10,10 @@ export default function App() {
       <Image source={require('./pictures/third-background-pictures.jpg')} style={styles.thirdBackgroundImage} />
       <Text style={styles.title}>Ready to find your perfect stay?</Text>
       <Text style={styles.subtitle}>Get the opportunity to find the best deals for your next stay.</Text>
-      <TouchableOpacity style={styles.button}>
+      <Image source={require('./pictures/first-icon.png')} style={styles.firsticon} />
+      <Image source={require('./pictures/second-icon.png')} style={styles.secondicon} />
+      <Image source={require('./pictures/third-icon.png')} style={styles.thirdicon} />
+      <TouchableOpacity href="./screens/Home" asChild style={styles.button}>
         <Text style={styles.buttonText}>Get Started</Text>
       </TouchableOpacity>
       <StatusBar style="auto" />
@@ -32,14 +36,22 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     marginRight: 20,
     position: 'absolute',
-    bottom: 250,
+    bottom: 270,
   },
-  aicha: {
-    fontSize: 32,
-    fontWeight: 500,
-    textAlign: 'center',
-    marginLeft: 20,
-    marginRight: 20,
+  firsticon: {
+    position: 'absolute',
+    bottom: 160,
+    left: 150,
+  },
+  secondicon: {
+    position: 'absolute',
+    bottom: 160,
+    left: 200,
+  },
+  thirdicon: {
+    position: 'absolute',
+    bottom: 160,
+    right: 180,
   },
   subtitle: {
     fontSize: 16,
@@ -49,6 +61,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 180,
     opacity: 0.6,
+    marginBottom: 32,
   },
   firstBackgroundImage: {
     width: 100,
@@ -56,8 +69,8 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     marginBottom: 20,
     position: 'absolute',
-    top: 90,
-    left: 120,
+    top: 50,
+    left: 62,
     transform: [{ rotate: '40deg' }],
   },
   secondBackgroundImage: {
@@ -65,8 +78,8 @@ const styles = StyleSheet.create({
     height: 100,
     borderRadius: 20,
     position: 'absolute',
-    top: 160,
-    right: 80,
+    top: 165,
+    right: 65,
     transform: [{ rotate: '40deg' }],
   },
   thirdBackgroundImage: {
@@ -75,7 +88,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     position: 'absolute',
     top: 180,
-    left: 45,
+    left: 20,
     transform: [{ rotate: '40deg' }],
   },
   button: {
